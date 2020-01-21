@@ -2,6 +2,7 @@ import tweepy
 import random
 import re
 
+
 while True:
     # ここに先程取得したAPIキーとトークンを入力
     api_key = ""
