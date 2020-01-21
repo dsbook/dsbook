@@ -1,5 +1,5 @@
-from pytorch_transformers.modeling_bert import BertForSequenceClassification
-from pytorch_transformers.tokenization_bert import BertTokenizer
+from transformers import BertForSequenceClassification
+from transformers import BertTokenizer
 import torch
 import torch.nn.functional as F
 
@@ -10,7 +10,7 @@ class DialogueBreakdownDetector:
         # num_labelsを1に設定
         self.model = BertForSequenceClassification.from_pretrained("bert-base-multilingual-cased", num_labels=1)
         # 対話破綻検出のファインチューニング後のモデルを読み込み
-        self.model.load_state_dict(torch.load("../dbdc_bert/pytorch_model.bin", map_location='cpu'))
+        self.model.load_state_dict(torch.load("dbdc_bert.bin", map_location='cpu'))
 
     def __convert_sequences_to_features(self, user_input, candidate):
         user_candidate_tokens = []
