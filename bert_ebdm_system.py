@@ -1,5 +1,6 @@
 import sys
 from bert_evaluator import BertEvaluator
+from telegram_bot import TelegramBot
 
 class BertEbdmSystem:
     def __init__(self):
@@ -23,10 +24,16 @@ class BertEbdmSystem:
 
         
     def __reply(self, utt):
-        results = self.es.search(index='tweet_reply_pair',
-                    body={'query':{'match':{'tweet':utt}}, 'size':10,})
-        return [(result['_source']['tweet'], result['_source']['reply'], result["_score"]) for result in results['hits']['hits']]
+        results = self.es.search(index='dialogue_pair',
+                    body={'query':{'match':{'query':utt}}, 'size':10,})
+        return [(result['_source']['query'], result['_source']['response'], result["_score"]) for result in results['hits']['hits']]
 
         
     def evaluate(self, utt, pair):
         return self.evaluator.evaluate(utt, pair[1])
+    
+if __name__ == '__main__':
+    system = BertEbdmSystem()
+    bot = TelegramBot(system)
+    bot.run()
+
