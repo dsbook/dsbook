@@ -16,8 +16,8 @@ with open("tweet_pairs.txt") as f:
         line = line.strip()
 
         if "\t" in line:
-            s = mecab.parse(line.split("\t")[0])
-            t = mecab.parse(line.split("\t")[1])
+            s = mecab.parse(line.rsplit("\t", 1)[0].replace("\t", " SEP "))
+            t = mecab.parse(line.rsplit("\t", 1)[1])
             # 両方とも5単語以上のツイートリプライペアを使用
             if len(s) >= 5 and len(t) >= 5:
                 source.append(s)
