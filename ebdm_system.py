@@ -8,12 +8,9 @@ from sklearn.feature_extraction.text import CountVectorizer
 import Levenshtein
 # word mover's distanceで使うライブラリ
 from gensim.models import Word2Vec
-
-# MeCabの初期化とエラー回避のための1回目parse
 tagger = MeCab.Tagger('-Owakati')
 tagger.parse("")
 try:
-    # w2vモデルの読み込み
     w2v = Word2Vec.load('./word2vec.gensim.model')
 except Exception as e:
     print(e)
