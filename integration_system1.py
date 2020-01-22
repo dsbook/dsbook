@@ -1,10 +1,11 @@
+from telegram_bot import TelegramBot
 import weather_system
 import ebdm_system
 
 class IntegrationSystem1:
     def __init__(self):
         # 二つのシステムを初期化する
-        self.system1 = weather_system.AimlSystem()
+        self.system1 = weather_system.WeatherSystem()
         self.system2 = ebdm_system.EbdmSystem()
 
     def initial_message(self, input):
@@ -21,8 +22,6 @@ class IntegrationSystem1:
             return self.system2.reply(input)
 
 if __name__ == '__main__':
-    systems = IntegrationSystem1()
-    print("SYS> " + systems.initial_message({'utt': '', 'sessionId': ''})['utt'])
-    while 1:
-        text = input("> ")
-        print("SYS> " + systems.reply({'utt': text, 'sessionId': ''})['utt'])
+    system = IntegrationSystem1()
+    bot = TelegramBot(system)
+    bot.run()
