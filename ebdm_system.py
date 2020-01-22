@@ -12,8 +12,11 @@ from gensim.models import Word2Vec
 # MeCabの初期化とエラー回避のための1回目parse
 tagger = MeCab.Tagger('-Owakati')
 tagger.parse("")
-# w2vモデルの読み込み
-w2v = Word2Vec.load('./word2vec.gensim.model')
+try:
+    # w2vモデルの読み込み
+    w2v = Word2Vec.load('./word2vec.gensim.model')
+except Exception as e:
+    print(e)
 
 # 類似度の評価関数
 # コサイン類似度
