@@ -2,3 +2,4 @@
 *.npy
 word2vec.gensim.model
 *.pyc
+telegram_bot.py

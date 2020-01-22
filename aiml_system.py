@@ -1,28 +1,34 @@
-import sys
 import aiml
 import MeCab
+from telegram_bot import TelegramBot
 
 class AimlSystem:
     def __init__(self):
-        # AIMLを読み込むためのライブラリを用意
-        self.kernel = aiml.Kernel()
-        # aiml.xmlを読み込む
-        self.kernel.learn("aiml.xml")
+        # セッションを管理するための辞書 
+        self.sessiondic = {}
         # 形態素解析器を用意
         self.tagger = MeCab.Tagger('-Owakati')
         
-    def initial_message(self, utt):
-        return {'utt':'はじめまして，雑談を始めましょう', 'sessionId':'dummy'}
+    def initial_message(self, input):
+        sessionId = input['sessionId']
+        # AIMLを読み込むためのインスタンスを用意
+        kernel = aiml.Kernel()
+        # aiml.xmlを読み込む
+        kernel.learn("aiml.xml")
+        # セッションごとに保存する
+        self.sessiondic[sessionId] = kernel
 
-    def reply(self, utt):
-        utt = utt['utt']
+        return {'utt':'はじめまして，雑談を始めましょう', 'end':False}
+
+    def reply(self, input):
+        sessionId = input['sessionId']
+        utt = input['utt']
         utt = self.tagger.parse(utt)
-        # kernel.respondでマッチするルールを探す
-        return {'utt': self.kernel.respond(utt), 'end':False}
+        # 対応するセッションのkernelを取り出し，respondでマッチするルールを探す
+        response = self.sessiondic[sessionId].respond(utt)
+        return {'utt': response, 'end':False}
         
 if __name__ == '__main__':
-    aiml = AimlSystem()
-    print("SYS> " + aiml.initial_message({'utt': '', 'sessionId': ''})['utt'])
-    while 1:
-        text = input("> ")
-        print("SYS> " + aiml.reply({'utt': text, 'sessionId': ''})['utt'])
+    system = AimlSystem()
+    bot = TelegramBot(system)
+    bot.run()
