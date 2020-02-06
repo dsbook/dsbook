@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" initial="ask_place">
+  <state id="ask_place">			      
+    <transition event="place" target="ask_date"/>
+  </state>
+  <state id="ask_date">			      
+    <transition event="date" target="ask_type"/>
+  </state>
+  <state id="ask_type">			      
+    <transition event="type" target="tell_info"/>
+  </state>
+  <final id="tell_info"/>
+</scxml>

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import sys
+=======
+from telegram_bot import TelegramBot
+>>>>>>> 01f1e5f... Add files via upload
 from elasticsearch import Elasticsearch
 import MeCab
 # コサイン類似度で使うライブラリ
@@ -12,8 +16,13 @@ tagger = MeCab.Tagger('-Owakati')
 tagger.parse("")
 try:
     w2v = Word2Vec.load('./word2vec.gensim.model')
+<<<<<<< HEAD
 except Exception as e:
     print(e)
+=======
+except:
+    pass
+>>>>>>> 01f1e5f... Add files via upload
 
 # 類似度の評価関数
 # コサイン類似度
@@ -55,7 +64,11 @@ class EbdmSystem:
 
     def __reply(self, utt):
         results = self.es.search(index='dialogue_pair',
+<<<<<<< HEAD
                     body={'query':{'match':{'query':utt}}, 'size':50,})
+=======
+                    body={'query':{'match':{'query':utt}}, 'size':100,})
+>>>>>>> 01f1e5f... Add files via upload
         return [(result['_source']['query'], result['_source']['response'], result["_score"]) for result in results['hits']['hits']]
         
     def evaluate(self, utt, pair):
@@ -67,8 +80,14 @@ class EbdmSystem:
         return pair[2]
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     ebdm = EbdmSystem()
     print("SYS> " + ebdm.initial_message({'utt': '', 'sessionId': ''})['utt'])
     while 1:
         text = input("> ")
         print("SYS> " + ebdm.reply({'utt': text, 'sessionId': ''})['utt'])
+=======
+    system = EbdmSystem()
+    bot = TelegramBot(system)
+    bot.run()
+>>>>>>> 01f1e5f... Add files via upload

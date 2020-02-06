@@ -1,7 +1,11 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
  
 # アクセストークン（先ほど発行されたアクセストークンに書き換えてください）
+<<<<<<< HEAD
 TOKEN = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+=======
+TOKEN = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+>>>>>>> 01f1e5f... Add files via upload
  
  
 class TelegramBot:
