@@ -92,7 +92,7 @@ while True:
 
     #         tweet3 =  id2status[id2replyid[rid]].full_text.replace("\n", " ")
     #         tweet3 = re.sub(r"@[0-9a-zA-Z_]{1,15} +", "", tweet3)
-    #         f.write(tweet1 + "\t" + tweet2 + "\t" + tweet3 + "\n")
+    #         f.write(tweet1 + " SEP " + tweet2 + "\t" + tweet3 + "\n")
     # f.close()
 
 
