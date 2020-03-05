@@ -22,7 +22,7 @@
 ```
 
 ## 正誤表
-書籍の誤植を発見された方は，[Issue]( https://github.com/dsbook/dsbook/issues/new) ，メール(dialoguesystemwithpythonあっとgmail.com)でご報告いただければ幸いです．
+書籍の誤植を発見された方は，[Issue]( https://github.com/dsbook/dsbook/issues/new)もしくはメール(dialoguesystemwithpythonあっとgmail.com)でご報告いただければ幸いです．
 | 頁 | 行 | 誤 | 正 |
 | --- | --- | --- | ---- |
 | p.224 | | 「キャラクタ性」のコラムが3章末と4章末に掲載されています．| [「対話システムとプライバシー」のコラム](/正誤表_Pythonでつくる対話システム（第1版第1刷200305）.pdf)が入ります． |
