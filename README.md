@@ -25,8 +25,8 @@
 書籍の誤植を発見された方は，[Issue]( https://github.com/dsbook/dsbook/issues/new)もしくはメール(dialoguesystemwithpythonあっとgmail.com)でご報告いただければ幸いです．
 | 頁 | 行 | 誤 | 正 |
 | --- | --- | --- | ---- |
-| p.8 ||図1.2の出典の2行目| Winogra | Winograd |
-| p.8 ||図1.2の出典の2行目| Artifical | Artificial |
+| p.8 |図1.2の(出典)の2行目| Winogra | Winograd |
+| p.8 |図1.2の(出典)の2行目| Artifical | Artificial |
 | p.224 | | 「キャラクタ性」のコラムが3章末と4章末に掲載されています．| [「対話システムとプライバシー」のコラム](/正誤表_Pythonでつくる対話システム（第1版第1刷200305）.pdf)が入ります． |
 
 
