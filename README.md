@@ -37,4 +37,5 @@
 
 本書籍で使用しているソフトウェア・APIのアップデート等に起因し，プログラムが本書籍通りに実行しても正しく動かない場合，[Issue]( https://github.com/dsbook/dsbook/issues/new) で報告をお願いします．
 
-(現在，実行できないプログラムは報告されていません)
+* learn_generative_model.ipynb
+  * Google ColabのPyTorchのバージョンが上がったため正しく動作しなくなりました．そのため，最初にPyTorch 1.2.0をインストールするように修正しました．GitHub上のソースコードは修正済みです．
