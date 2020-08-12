@@ -39,3 +39,5 @@
 
 * learn_generative_model.ipynb
   * Google ColabのPyTorchのバージョンが上がったため正しく動作しなくなりました．そのため，最初にPyTorch 1.2.0をインストールするように修正しました．GitHub上のソースコードは修正済みです．
+* PythonでMeCabを使用するとRuntime Errorが出る
+  * mecab-python3のバージョンにより正しく動作しない場合があります．古いバージョンを指定してインストールしてください (例: $pip install mecab-python3==0.996.5)
