@@ -37,7 +37,7 @@
 
 本書籍で使用しているソフトウェア・APIのアップデート等に起因し，プログラムが本書籍通りに実行しても正しく動かない場合，[Issue]( https://github.com/dsbook/dsbook/issues/new) で報告をお願いします．
 
-* learn_generative_model.ipynb
+* learn_generative_model.ipynb, bert_example_based_finetuning.ipynb
   * Google ColabのPyTorchのバージョンが上がったため正しく動作しなくなりました．そのため，最初にPyTorch 1.2.0をインストールするように修正しました．GitHub上のソースコードは修正済みです．
 * PythonでMeCabを使用した際にRuntime Errorが出る
   * mecab-python3のバージョンにより正しく動作しない場合があります．バージョンを指定してインストールしてください (例: $pip install mecab-python3==0.996.5)
