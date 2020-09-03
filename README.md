@@ -41,3 +41,15 @@
   * Google ColabのPyTorchのバージョンが上がったため正しく動作しなくなりました．そのため，最初にPyTorch 1.2.0をインストールするように修正しました．GitHub上のソースコードは修正済みです．
 * PythonでMeCabを使用した際にRuntime Errorが出る
   * mecab-python3のバージョンにより正しく動作しない場合があります．バージョンを指定してインストールしてください (例: $pip install mecab-python3==0.996.5)
+* OpenNMT-pyがインストールできない
+  * requirements.txtにおけるtorchtextがインストールできなくなっているようですので，別途pipでインストールします．
+  * まず，OpenNMT-pyフォルダ内にあるrequirements.txtをエディタで開き，4行目を以下のように変更(行頭に#を付加)して保存してください．
+    ```
+    #git+https://github.com/pytorch/text.git@master#wheel=torchtext
+    ```
+  * 次に，コンソール上で以下を実行してください．
+    ```
+    $pip3 install -r requirements.txt
+    $pip3 install torchtext==0.4.0
+    $sudo python3 setup.py install
+    ```
