@@ -39,7 +39,7 @@
 
 ### 現在までに判明している問題とその対処法
 * learn_generative_model.ipynb, bert_example_based_finetuning.ipynbが書籍の通りに記述しても動作しない
-  * Google ColabのPyTorchのバージョンが上がったため正しく動作しなくなりました．そのため，最初にPyTorch 1.2.0をインストールするように修正しました．GitHub上のソースコードは修正済みです．
+  * Google ColabのPyTorchのバージョンが上がったため正しく動作しなくなりました．そのため，最初にPyTorch 1.2.0をインストールする必要があります．GitHub上のソースコードは修正済みです．
 * PythonでMeCabを使用した際にRuntime Errorが出る
   * mecab-python3のバージョンにより正しく動作しない場合があります．バージョンを指定してインストールしてください (例: $pip install mecab-python3==0.996.5)
 * ローカル環境にOpenNMT-pyがインストールできない
