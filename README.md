@@ -38,6 +38,8 @@
 本書籍で使用しているソフトウェア・APIのアップデート等に起因し，プログラムが本書籍通りに実行しても正しく動かない場合，[Issue]( https://github.com/dsbook/dsbook/issues/new) で報告をお願いします．
 
 ### 現在までに判明している問題とその対処法
+* Telegramから応答が返ってこない
+  * python-telegram-botのバージョンが上がったため正しく動作しなくなりました．過去のバージョンを指定してインストールしてください (例: $pip3 install python-telegram-bot==12.8)
 * learn_generative_model.ipynb, bert_example_based_finetuning.ipynbが書籍の通りに記述しても動作しない
   * Google ColabのPyTorchのバージョンが上がったため正しく動作しなくなりました．そのため，最初にPyTorch 1.2.0をインストールする必要があります．GitHub上のソースコードは修正済みです．
 * PythonでMeCabを使用した際にRuntime Errorが出る
