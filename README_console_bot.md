@@ -4,7 +4,7 @@
 
 ## 使用方法
 
-実行する対話システムのプログラム(echo_system.py, weather_system.pyなど)のプログラムを以下のように修正してください．
+実行する対話システムのプログラム(echo_system.py, weather_system.pyなど)を以下のように修正してください．
 
 * console_botのインポート
   * プログラムの先頭に以下を追加
