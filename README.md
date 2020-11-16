@@ -2,6 +2,7 @@
 
 このリポジトリでは，オーム社から発売中の『[Pythonでつくる対話システム](https://www.ohmsha.co.jp/book/9784274224799/)』で使用するプログラムとデータ，およびサポートのためのページです．
 
+**(2020/11/16) Telegramを使用せずに対話システムを実行可能にするプログラムを追加しました** →  [使用方法](https://github.com/dsbook/dsbook/blob/master/README_console_bot.md)
 
 ## プログラム
 
