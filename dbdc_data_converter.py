@@ -38,7 +38,7 @@ for f in glob.glob("DBDC2*.zip"):
                     for d in json_data["turns"]:
                         feature = []
                         uttr_logs.append(d["utterance"])
-                        if d["speaker"] is "S" and len(uttr_logs) > 2:
+                        if d["speaker"] == "S" and len(uttr_logs) > 2:
                             write_lines.append(uttr_logs[-2] + "\t" + uttr_logs[-1] + "\t" + annotations_to_o_ratio(d["annotations"]))
 
 # 出力用のディレクトリを作成
