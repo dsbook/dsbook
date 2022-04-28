@@ -2,6 +2,8 @@
 
 このリポジトリでは，オーム社から発売中の『[Pythonでつくる対話システム](https://www.ohmsha.co.jp/book/9784274224799/)』で使用するプログラムとデータ，およびサポートのためのページです．
 
+**(2022/04/28) 第1版第2刷の発行にあたり，第1刷からのアップデート情報を追加しました．第1刷をお持ちの方で，プログラムが動作しない場合はこちらをご覧ください** →  [アップデート情報](https://github.com/dsbook/dsbook/blob/master/eratta-taiwasystem_20220427.pdf)
+
 **(2020/11/16) Telegramを使用せずに対話システムを実行可能にするプログラムを追加しました** →  [使用方法](https://github.com/dsbook/dsbook/blob/master/README_console_bot.md)
 
 ## プログラム
@@ -22,12 +24,10 @@
 ```
 
 ## 正誤表
-書籍の誤植を発見された方は，[Issue]( https://github.com/dsbook/dsbook/issues/new)もしくはメール(dialoguesystemwithpythonあっとgmail.com)でご報告いただければ幸いです．
-| 頁 | 行 | 誤 | 正 |
-| --- | --- | --- | ---- |
-| p.8 |図1.2の(出典)の2行目| Terry Winogra, "GUS, A Frame-Driven Dialog System," Artifical Intelligence, | Terry Winograd, "GUS, A Frame-Driven Dialog System," Artificial Intelligence, |
-| p.61 |図2.7| date 天気 | type 天気 |
-| p.224 | | 「キャラクタ性」のコラムが3章末と4章末に掲載されています．| [「対話システムとプライバシー」のコラム](/正誤表_Pythonでつくる対話システム（第1版第1刷200305）.pdf)が入ります． |
+正誤表は[こちら](https://github.com/dsbook/dsbook/blob/master/eratta-taiwasystem_20220427.pdf)
+
+正誤表には掲載されていない書籍の誤植を発見された方は，[Issue]( https://github.com/dsbook/dsbook/issues/new)もしくはメール(dialoguesystemwithpythonあっとgmail.com)でご報告いただければ幸いです．
+
 
 ## よくある質問
 **Q**：echo_system.pyなどTelegram上で対話システムを動かすプログラムを実行する際，「TelegramDeprecationWarning: Old Handler API is deprecated - see https://git.io/fxJuV for details」という警告が出ます．どうすればよいでしょうか？
@@ -39,21 +39,5 @@
 本書籍で使用しているソフトウェア・APIのアップデート等に起因し，プログラムが本書籍通りに実行しても正しく動かない場合，[Issue]( https://github.com/dsbook/dsbook/issues/new) で報告をお願いします．
 
 ### 現在までに判明している問題とその対処法
-* Telegramから応答が返ってこない
-  * python-telegram-botのバージョンが上がったため正しく動作しなくなりました．過去のバージョンを指定してインストールしてください (例: $pip3 install python-telegram-bot==12.8)
-* learn_generative_model.ipynb, bert_example_based_finetuning.ipynbが書籍の通りに記述しても動作しない
-  * Google ColabのPyTorchのバージョンが上がったため正しく動作しなくなりました．そのため，最初にPyTorch 1.2.0をインストールする必要があります．GitHub上のソースコードは修正済みです．
-* PythonでMeCabを使用した際にRuntime Errorが出る
-  * mecab-python3のバージョンにより正しく動作しない場合があります．バージョンを指定してインストールしてください (例: $pip install mecab-python3==0.996.5)
-* ローカル環境にOpenNMT-pyがインストールできない
-  * requirements.txtにおけるtorchtextがインストールできなくなっているようですので，別途pipでインストールします．
-  * まず，OpenNMT-pyフォルダ内にあるrequirements.txtをエディタで開き，4行目を以下のように変更(行頭に#を付加)して保存してください．
-    ```
-    #git+https://github.com/pytorch/text.git@master#wheel=torchtext
-    ```
-  * 次に，コンソール上で以下を実行してください．
-    ```
-    $pip3 install -r requirements.txt
-    $pip3 install torchtext==0.4.0
-    $sudo python3 setup.py install
-    ```
+
+[アップデート情報](https://github.com/dsbook/dsbook/blob/master/eratta-taiwasystem_20220427.pdf)を参照してください．
