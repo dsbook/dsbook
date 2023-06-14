@@ -41,3 +41,9 @@
 ### 現在までに判明している問題とその対処法
 
 [アップデート情報](https://github.com/dsbook/dsbook/blob/master/eratta-taiwasystem_20220427.pdf)を参照してください．
+
+### mecab-python3がインストールできない．
+P.20のインストールコマンドを以下に変更してください．
+```
+$ pip install mecab-python3==0.996.1
+```
